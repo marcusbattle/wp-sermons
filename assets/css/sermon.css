@@ -70,7 +70,8 @@
 
 @media (max-width: 768px) {
   .sermon-player-hero {
-    position: relative; }
+    position: relative;
+    padding: 50px 0; }
     .sermon-player-hero h2 {
       font-size: 64px; } }
 
