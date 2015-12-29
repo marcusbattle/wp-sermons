@@ -1,10 +1,14 @@
 $accent-color-one: #00CED1;
 
 .sermon-player-hero {
-	position: absolute;
 	z-index: 200;
-	bottom: 50px;
 	color: #fff;
+	background-color: #222;
+	width: 100%;
+	background-color: transparent;
+	text-align: center;
+	margin: 0;
+	padding-bottom: 50px;
 
 	.play-button,
 	.jp-volume-controls button,
@@ -17,13 +21,6 @@ $accent-color-one: #00CED1;
 		font-weight: 200;
 		font-style: italic;
 	}
-
-	background-color: #222;
-	padding-top: 130px;
-	width: 100%;
-	background-color: transparent;
-	text-align: center;
-	margin: 0;
 
 	#sermon-player {
 
