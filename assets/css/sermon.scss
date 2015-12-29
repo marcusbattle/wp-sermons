@@ -1,0 +1,132 @@
+$accent-color-one: #00CED1;
+
+.sermon-player-hero {
+	position: absolute;
+	z-index: 200;
+	bottom: 50px;
+	color: #fff;
+
+	.play-button,
+	.jp-volume-controls button,
+	.jp-time-holder {
+		color: $accent-color-one;
+	}
+
+	h2 {
+		font-size: 120px;
+		font-weight: 200;
+		font-style: italic;
+	}
+
+	background-color: #222;
+	padding-top: 130px;
+	width: 100%;
+	background-color: transparent;
+	text-align: center;
+	margin: 0;
+
+	#sermon-player {
+
+		.play-button {
+			font-size: 150px;
+			cursor: pointer;
+			display: inline-block;
+			line-height: 150px;
+
+			.pause {
+				display: none;
+			}
+
+			&.playing  {
+
+				.play {
+					display: none;
+				}
+
+				.pause {
+					display: block;
+				}
+			}
+		}
+
+		.mute,
+		.volume-up {
+			font-size: 36px;
+		}
+
+		.volume-up {
+
+			.hide {
+				display: none;
+			}
+
+		}
+
+	}
+
+	.jp-audio {
+		margin: 0 auto;
+		background-color: transparent;
+		border: none;
+	}
+
+	.jp-progress {
+		position: relative;
+		width: 100%;
+		left: 0;
+		top: 0;
+		border-radius: 10px;
+	}
+
+	.jp-interface {
+		background-color: transparent;
+	}
+
+	.jp-mute,
+	.jp-volume-max {
+		background: none;
+	}
+
+	.jp-volume-controls {
+		position: relative;
+		top: 13px;
+		right: 0;
+		font-size: 30px;
+
+		button {
+			text-indent: inherit;
+			overflow: visible;
+			padding: 0;
+			width: initial;
+			height: initial;
+			top: -9px;
+			line-height: 30px;
+		}
+
+	}
+
+	.jp-time-holder {
+		position: relative;
+		width: 130px;
+		left: 0;
+		top: 10px;
+		font-size: 20px;
+
+		> div {
+			text-align: left;
+		}
+	}
+}
+
+@media ( max-width: 768px ) {
+
+	.sermon-player-hero {
+		position: relative;
+
+		h2 {
+			font-size: 64px;
+		}
+
+	}
+
+}

@@ -12,12 +12,14 @@ class WP_Sermons {
 	public function __construct() {
 
 		require_once dirname( __FILE__ ) . '/includes/CMB2/init.php';
-		
+
 		add_action( 'init', array( $this, 'init_sermon_post_type' ) );
 		add_action( 'cmb2_init', array( $this, 'sermon_metaboxes' ) );
 		add_filter( 'wp_insert_post_data' , array( $this, 'filter_sermon_data' ) , '99', 2 );
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'scripts_styles' ) );
+
+		add_shortcode( 'sermon', array( $this, 'sermon_shortcode' ) );
 
 	}
 
@@ -28,8 +30,10 @@ class WP_Sermons {
 			wp_enqueue_style( 'jPlayer-Blue', plugin_dir_url( __FILE__ ) . '/assets/js/jPlayer/dist/skin/blue.monday/css/jplayer.blue.monday.min.css' );
 			wp_enqueue_script( 'jPlayer', plugin_dir_url( __FILE__ ) . '/assets/js/jPlayer/dist/jplayer/jquery.jplayer.min.js', array('jquery'), '2.9.2', true );
 
-			wp_enqueue_script( 'sermon', plugin_dir_url( __FILE__ ) . '/assets/js/sermon.js', array('jPlayer'), '0.1.0', true );			
-			
+			wp_enqueue_style( 'sermon', plugin_dir_url( __FILE__ ) . '/assets/css/sermon.css' );
+			wp_enqueue_script( 'sermon', plugin_dir_url( __FILE__ ) . '/assets/js/sermon.js', array('jPlayer'), '0.1.0', true );
+
+			wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' );
 		// }
 
 	}
@@ -72,6 +76,12 @@ class WP_Sermons {
 
 	}
 
+	public function sermon_shortcode( $atts ) {
+
+		include_once plugin_dir_path( __FILE__ ) . 'views/sermon-hero.php';
+
+	}
+
 	public function sermon_metaboxes() {
 
 		$prefix = 'sermon_';
@@ -82,7 +92,7 @@ class WP_Sermons {
 			'object_types'  => array( 'sermon' ),
 			'context'       => 'normal',
 			'priority'      => 'high',
-			'show_names'    => true, 
+			'show_names'    => true,
 		) );
 
 		$sermon_details ->add_field( array(

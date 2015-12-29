@@ -1,0 +1,79 @@
+.sermon-player-hero {
+  position: absolute;
+  z-index: 200;
+  bottom: 50px;
+  color: #fff;
+  background-color: #222;
+  padding-top: 130px;
+  width: 100%;
+  background-color: transparent;
+  text-align: center;
+  margin: 0; }
+  .sermon-player-hero .play-button,
+  .sermon-player-hero .jp-volume-controls button,
+  .sermon-player-hero .jp-time-holder {
+    color: #00CED1; }
+  .sermon-player-hero h2 {
+    font-size: 120px;
+    font-weight: 200;
+    font-style: italic; }
+  .sermon-player-hero #sermon-player .play-button {
+    font-size: 150px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 150px; }
+    .sermon-player-hero #sermon-player .play-button .pause {
+      display: none; }
+    .sermon-player-hero #sermon-player .play-button.playing .play {
+      display: none; }
+    .sermon-player-hero #sermon-player .play-button.playing .pause {
+      display: block; }
+  .sermon-player-hero #sermon-player .mute,
+  .sermon-player-hero #sermon-player .volume-up {
+    font-size: 36px; }
+  .sermon-player-hero #sermon-player .volume-up .hide {
+    display: none; }
+  .sermon-player-hero .jp-audio {
+    margin: 0 auto;
+    background-color: transparent;
+    border: none; }
+  .sermon-player-hero .jp-progress {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 10px; }
+  .sermon-player-hero .jp-interface {
+    background-color: transparent; }
+  .sermon-player-hero .jp-mute,
+  .sermon-player-hero .jp-volume-max {
+    background: none; }
+  .sermon-player-hero .jp-volume-controls {
+    position: relative;
+    top: 13px;
+    right: 0;
+    font-size: 30px; }
+    .sermon-player-hero .jp-volume-controls button {
+      text-indent: inherit;
+      overflow: visible;
+      padding: 0;
+      width: initial;
+      height: initial;
+      top: -9px;
+      line-height: 30px; }
+  .sermon-player-hero .jp-time-holder {
+    position: relative;
+    width: 130px;
+    left: 0;
+    top: 10px;
+    font-size: 20px; }
+    .sermon-player-hero .jp-time-holder > div {
+      text-align: left; }
+
+@media (max-width: 768px) {
+  .sermon-player-hero {
+    position: relative; }
+    .sermon-player-hero h2 {
+      font-size: 64px; } }
+
+/*# sourceMappingURL=sermon.css.map */
